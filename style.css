@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Optional background color */
+}
+:root{
+    --shadow:0 0 10px black;
+    --bod:1px solid black;
+    --b-r:20px;
+    --ff:system-ui;
+}
+#bd,#cd{
+    width:200px;
+    height:300px;
+    box-shadow: var(--shadow);
+    border:var(--bod);
+    border-radius: var(--b-r);
+    font-family: var(--ff);
+    text-align:center;
+    perspective: 1000px; 
+}
+
+#text-container {
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color:white;
+    white-space: nowrap; /* Prevent text wrapping */
+    width: 100vw; /* Full width of the viewport */
+    overflow: hidden; /* Hide overflow to prevent layout shift */ /* Allow absolute positioning for child elements */
+}
+
+#text-container > #p {/* Font size for the text */
+     /* Position for animation */
+    animation: key 5s linear infinite; /* Linear animation for smoothness */
+}
+
+@keyframes key {
+    0% {
+        transform: translateX(100%); /* Start off-screen to the left */
+    }
+    100% {
+        transform: translateX(-100%); /* End off-screen to the right */
+    }
+}
